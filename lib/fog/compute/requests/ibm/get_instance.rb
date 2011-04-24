@@ -3,7 +3,7 @@ module Fog
     class Compute
       class Real
 
-        require 'fog/compute/parsers/ibm/get_instance'
+        #require 'fog/compute/parsers/ibm/get_instance'
 
         # Returns the Instance that the authenticated user manages with the specified :instance_id
         #
@@ -48,49 +48,29 @@ module Fog
         def get_instance(instance_id)
           response = Excon::Response.new
           response.status = 200
-
-          instances_set = []
-          reservation_id = Fog::AWS::Mock.reservation_id
-
-          min_count.times do |i|
-            instance_id = Fog::IBM::Mock.instance_id
-            instance = {
-              'amiLaunchIndex'      => i,
-              'blockDeviceMapping'  => [],
-              'clientToken'         => options['clientToken'],
-              'dnsName'             => nil,
-              'imageId'             => image_id,
-              'instanceId'          => instance_id,
-              'instanceState'       => { 'code' => 0, 'name' => 'pending' },
-              'instanceType'        => options['InstanceType'] || 'm1.small',
-              'kernelId'            => options['KernelId'] || Fog::AWS::Mock.kernel_id,
-              # 'keyName'             => options['KeyName'],
-              'launchTime'          => Time.now,
-              'monitoring'          => { 'state' => options['Monitoring.Enabled'] || false },
-              'placement'           => { 'availabilityZone' => options['Placement.AvailabilityZone'] || Fog::AWS::Mock.availability_zone },
-              'privateDnsName'      => nil,
-              'productCodes'        => [],
-              'ramdiskId'           => options['RamdiskId'] || Fog::AWS::Mock.ramdisk_id,
-              'reason'              => nil,
-              'rootDeviceType'      => 'instance-store'
-            }
-            instances_set << instance
-            @data[:instances][instance_id] = instance.merge({
-              'architecture'        => 'i386',
-              'groupSet'            => group_set,
-              'ownerId'             => @owner_id,
-              'privateIpAddress'    => nil,
-              'reservationId'       => reservation_id,
-              'stateReason'         => {},
-              'tagSet'              => {}
-            })
-          end
           response.body = {
-            'groupSet'      => group_set,
-            'instancesSet'  => instances_set,
-            'ownerId'       => @owner_id,
-            'requestId'     => Fog::AWS::Mock.request_id,
-            'reservationId' => reservation_id
+            "name"      => "Deep Thought",
+            "location"  => "101",
+            "keyName"   => "h2g2",
+            "primaryIP" => { "type"=>0, "ip"=>"42.42.42.42", "hostname"=> "deep.thought.org" },
+            "productCodes"  => [],
+            "requestId" => "73846",
+            "imageId"   => "20018425",
+            "launchTime"=> 1,
+            "id"        => "42",
+            "volumes"   => [],
+            "root-only" => "false",
+            "instanceType"  => "COP32.1/2048/60",
+            "diskSize"  => "60",
+            "requestName" => "What is the answer to the Ultimate Question?",
+            "secondaryIP"=> [],
+            "status"    => 1,
+            "software"  =>
+              [{"name"=>"SUSE Linux Enterprise Server",
+                "type"=>"OS",
+                "version"=>"11 SP1"}],
+            "expirationTime"=>1366614000000,
+            "owner"=>"loonquawl@thought.org"
           }
           response
         end
