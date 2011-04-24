@@ -19,6 +19,9 @@ module Fog
       when 'GoGrid'
         require 'fog/compute/go_grid'
         Fog::GoGrid::Compute.new(attributes)
+      when 'IBM'
+        require 'fog/compute/ibm'
+        Fog::IBM::Compute.new(attributes)  
       when 'Linode'
         require 'fog/compute/linode'
         Fog::Linode::Compute.new(attributes)
