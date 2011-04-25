@@ -68,7 +68,7 @@ module Fog
           params[:headers] ||= {}
           params[:headers].merge!({
             'Accept' => 'application/json',
-            'Authorization' => "Basic #{Base64.encode64([@ibm_user_id, @ibm_password].join(':')).delete("\r\n")}"
+            'Authorization' => "Basic #{Base64.encode64([@ibm_user_id, @ibm_password].join(':')).chomp}"
           })
 
           begin
