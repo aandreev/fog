@@ -52,8 +52,8 @@ module Fog
           end
 
           require 'json'
-          @ibm_user_id          = options[:ibm_user_id]
-          @bluebox_customer_id  = options[:ibm_password]
+          @ibm_user_id  = options[:ibm_user_id]
+          @ibm_password = options[:ibm_password]
           @host   = options[:ibm_host]    || "www-147.ibm.com"
           @port   = options[:ibm_port]    || 443
           @scheme = options[:ibm_scheme]  || 'https'
