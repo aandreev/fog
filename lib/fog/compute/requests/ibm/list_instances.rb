@@ -8,7 +8,8 @@ module Fog
         # Returns list of instances that the authenticated user manages.
         #
         # ==== Parameters
-        # 
+        # No parameters
+        #
         # ==== Returns
         # * response<~Excon::Response>:
         #   * body<~Hash>:
@@ -45,7 +46,7 @@ module Fog
 
       class Mock
 
-        def get_instance(instance_id)
+        def list_instances()
           response = Excon::Response.new
           response.status = 200
           response.body = {"instances"=>
