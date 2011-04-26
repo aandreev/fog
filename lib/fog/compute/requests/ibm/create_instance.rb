@@ -61,19 +61,21 @@ module Fog
             :expects  => 200,
             :method   => 'POST',
             :path     => "computecloud/enterprise/api/rest/20100331/instances",
+            :headers  => { 'Content-Type' => "application/x-www-form-urlencoded" },
             :query    => {
               'name'          => name,
               'imageID'       => image_id,
               'instanceType'  => instance_type,
               'location'      => location,
-              'publicKey'     => public_key,
-              'ip'            => options[:ip].to_s,
-              'volumeID'      => options[:volume_id].to_s,
-              'vlanID'        => options[:vlan_id].to_s,
-              'SecondaryIP'   => options[:secondary_ip].to_s,
-              'isMiniEphermal'          => options[:is_mini_ephermal].to_s,
-              'Configuration Data'      => options[:configuration_data],
-              'antiCollcationInstance'  => options[:anti_collocation_instance].to_s 
+              'publicKey'     => public_key
+              # TODO: Figure out option handling
+              #'ip'            => options[:ip].to_s,
+              #'volumeID'      => options[:volume_id].to_s,
+              #'vlanID'        => options[:vlan_id].to_s,
+              #'SecondaryIP'   => options[:secondary_ip].to_s,
+              #'isMiniEphermal'          => options[:is_mini_ephermal].to_s,
+              #'Configuration Data'      => options[:configuration_data],
+              #'antiCollcationInstance'  => options[:anti_collocation_instance].to_s 
             }
           )
         end
