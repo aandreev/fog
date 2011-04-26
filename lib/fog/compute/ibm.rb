@@ -11,6 +11,7 @@ module Fog
       collection  :servers
 
       request_path 'fog/compute/requests/ibm'
+      request :create_instance
       request :get_instance
 
       class Mock
