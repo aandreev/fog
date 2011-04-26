@@ -20,6 +20,10 @@ def compute_providers
       },
       :mocked => false
     },
+    IBM => {
+      :server_attributes => {},
+      :mocked => true
+    },
     Rackspace => {
       :server_attributes => {
         :image_id => 49, # image 49 = Ubuntu 10.04 LTS (lucid)

@@ -71,8 +71,8 @@ module Fog
               'volumeID'      => options[:volume_id].to_s,
               'vlanID'        => options[:vlan_id].to_s,
               'SecondaryIP'   => options[:secondary_ip].to_s,
-              'isMiniEphermal'          => options[:is_mini_ephermal].to_s
-              'Configuration Data'      => options[:configuration_data].to_s
+              'isMiniEphermal'          => options[:is_mini_ephermal].to_s,
+              'Configuration Data'      => options[:configuration_data],
               'antiCollcationInstance'  => options[:anti_collocation_instance].to_s 
             }
           )
@@ -82,7 +82,7 @@ module Fog
 
       class Mock
 
-        def create_instance(instance_id)
+        def create_instance()
           response = Excon::Response.new
           response.status = 200
           response.body = {
