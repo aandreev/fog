@@ -12,6 +12,7 @@ module Fog
 
       request_path 'fog/compute/requests/ibm'
       request :create_instance
+      request :delete_instance
       request :get_instance
       request :list_instances
       request :list_images
