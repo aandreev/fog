@@ -25,7 +25,7 @@ module Fog
       #request :delete_storage
       request :get_storage
       request :list_storage
-      #request :list_storage_offerings
+      request :list_storage_offerings
       request :get_location
       #request :list_locations
       #request :create_address
