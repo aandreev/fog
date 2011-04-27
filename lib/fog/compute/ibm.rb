@@ -11,15 +11,30 @@ module Fog
       collection  :servers
 
       request_path 'fog/compute/requests/ibm'
+      # TODO: support updates to instances?
       request :create_instance
       request :delete_instance
       request :get_instance
       request :list_instances
+      #request :get_request
+      #request :create_image
+      #request :delete_image
+      #request :get_image
       request :list_images
       request :create_storage
+      #request :delete_storage
       request :get_storage
       request :list_storage
+      #request :list_storage_offerings
       request :get_location
+      #request :list_locations
+      #request :create_address
+      #request :delete_address
+      #request :get_address
+      #request :list_addresses
+      #request :get_vlans
+      #request :create_key - does want?
+      #request :list_keys
       
       class Mock
 
