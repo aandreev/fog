@@ -16,8 +16,11 @@ module Fog
       request :get_instance
       request :list_instances
       request :list_images
+      request :create_storage
+      request :get_storage
       request :list_storage
-
+      request :get_location
+      
       class Mock
 
         def self.data
