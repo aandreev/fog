@@ -16,6 +16,7 @@ module Fog
       request :get_instance
       request :list_instances
       request :list_images
+      request :list_storage
 
       class Mock
 
