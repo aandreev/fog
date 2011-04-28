@@ -25,8 +25,8 @@ module Fog
       request :create_image
       request :delete_image
       request :get_image
+      request :get_image_agreement
       request :get_image_manifest
-      #request :get_image_agreement
       request :list_images
       request :create_storage
       request :delete_storage
