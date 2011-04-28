@@ -3,27 +3,27 @@ module Fog
     class Compute
       class Real
 
-        #require 'fog/compute/parsers/ibm/rename_instance'
+        #require 'fog/compute/parsers/ibm/set_instance_expiration'
 
-        # Renames an instance
+        # Sets new expiration time for instance
         #
         # ==== Parameters
-        # * instance_id<~String> - id of instance to rename
-        # * name<~String> - name to be assigned to instance
+        # * instance_id<~String> - id of instance to update
+        # * expiration_time<~Integer> - expiration time of instance (epoch)
         #
         # ==== Returns
         # * response<~Excon::Response>:
         #   * body<~Hash>:
-        #     * 'success'<~Bool>: success status of rename request
+        #     * 'expirationTime'<~Integer>: new expiration time of instance (epoch)
         #
                 
-        def rename_instance(instance_id, name)
+        def set_instance_expiration(instance_id, expiration_time)
           request(
             :expects  => 200,
             :method   => 'PUT',
             :path     => "computecloud/enterprise/api/rest/20100331/instances/#{instance_id}",
             :body    => {
-              'name'       => name
+              'expirationTime'       => expiration_time
             }
           )
         end
@@ -32,10 +32,10 @@ module Fog
 
       class Mock
 
-        def rename_instance(instance_id, key_name)
+        def set_instance_expiration(instance_id, expiration_time)
           response = Excon::Response.new
           response.status = 200
-          response.body = {"success"=>true}
+          response.body = {"expirationTime"=>1367014363200}
           response
         end
 

@@ -17,7 +17,7 @@ module Fog
       request :list_instances
       request :restart_instance
       request :rename_instance
-      #request :set_instance_expiration
+      request :set_instance_expiration
       #request :attach_storage (not supported yet - 20100331)
       #request :detach_storage (not supported yet - 20100331)
       #request :get_request
