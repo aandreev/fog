@@ -40,7 +40,7 @@ module Fog
       request :list_vlans
       #request :create_key
       #request :get_key
-      #request :list_keys
+      request :list_keys
       #name
       #name & publicKey
       #update key
