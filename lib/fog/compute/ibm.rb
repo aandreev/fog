@@ -33,14 +33,20 @@ module Fog
       request :get_storage
       request :list_storage
       request :list_storage_offerings
-      request :get_location
-      request :list_locations #Doesn't support JSON
       request :create_address
       request :delete_address
       request :list_addresses
+      request :list_address_offerings
       request :list_vlans
-      #request :create_key - does want?
+      #request :create_key
+      #request :get_key
       #request :list_keys
+      #name
+      #name & publicKey
+      #update key
+      #request :delete_key
+      request :get_location
+      request :list_locations #Doesn't support JSON
       
       class Mock
 
