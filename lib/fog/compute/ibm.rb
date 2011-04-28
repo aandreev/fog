@@ -29,11 +29,11 @@ module Fog
       request :list_storage_offerings
       request :get_location
       #request :list_locations
-      request :create_address
+      request :create_address #TODO
       #request :delete_address
       #request :get_address
       request :list_addresses
-      #request :get_vlans
+      request :list_vlans
       #request :create_key - does want?
       #request :list_keys
       
