@@ -38,7 +38,7 @@ module Fog
       request :list_addresses
       request :list_address_offerings
       request :list_vlans
-      #request :create_key
+      request :create_key
       request :get_key
       request :list_keys
       #name
