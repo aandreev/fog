@@ -16,6 +16,7 @@ module Fog
       request :delete_instance
       request :get_instance
       request :list_instances
+      request :restart_instance
       #request :get_request
       #request :clone_image
       request :create_image
@@ -32,7 +33,7 @@ module Fog
       request :create_address
       request :delete_address
       request :list_addresses
-      request :list_vlans # not done
+      request :list_vlans
       #request :create_key - does want?
       #request :list_keys
       
