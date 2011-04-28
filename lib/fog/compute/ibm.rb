@@ -32,7 +32,7 @@ module Fog
       request :create_address
       request :delete_address
       request :list_addresses
-      request :list_vlans
+      request :list_vlans # not done
       #request :create_key - does want?
       #request :list_keys
       
@@ -86,6 +86,16 @@ module Fog
         def reload
           @connection.reset
         end
+        
+        def url_encode(hash)
+          query = ""
+          for key, values in hash
+            for value in [*values]
+              query << key.to_s << '=' << URI.escape(value.to_s) << '&'
+            end
+          end
+          query.chop! # remove trailing '&'
+        end
 
         def request(params)
           params[:headers] ||= {}
@@ -93,7 +103,10 @@ module Fog
             'Accept' => 'application/json',
             'Authorization' => "Basic #{Base64.encode64([@ibm_user_id, @ibm_password].join(':')).chomp}"
           })
-
+          if params[:body].class == Hash
+            params[:body] = url_encode(params[:body].dup)            
+            params[:headers]['Content-Type'] = "application/x-www-form-urlencoded"
+          end
           begin
             response = @connection.request(params.merge!({:host => @host}))
           rescue Excon::Errors::HTTPStatusError => error
