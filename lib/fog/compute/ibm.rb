@@ -24,7 +24,7 @@ module Fog
       #request :clone_image
       request :create_image
       #request :delete_image
-      #request :get_image
+      request :get_image
       request :list_images
       request :create_storage
       request :delete_storage
