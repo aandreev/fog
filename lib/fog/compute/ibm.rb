@@ -20,7 +20,7 @@ module Fog
       request :set_instance_expiration
       #request :attach_storage (not supported yet - 20100331)
       #request :detach_storage (not supported yet - 20100331)
-      #request :get_request
+      request :get_request
       #request :clone_image
       request :create_image
       #request :delete_image
