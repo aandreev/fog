@@ -23,13 +23,13 @@ module Fog
       #request :get_image
       request :list_images
       request :create_storage
-      #request :delete_storage
+      request :delete_storage
       request :get_storage
       request :list_storage
       request :list_storage_offerings
       request :get_location
-      #request :list_locations
-      request :create_address #TODO
+      request :list_locations #Doesn't support JSON
+      request :create_address
       request :delete_address
       request :list_addresses
       request :list_vlans
