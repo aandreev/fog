@@ -21,7 +21,7 @@ module Fog
       #request :attach_storage (not supported yet - 20100331)
       #request :detach_storage (not supported yet - 20100331)
       request :get_request
-      #request :clone_image
+      request :clone_image
       request :create_image
       request :delete_image
       request :get_image
