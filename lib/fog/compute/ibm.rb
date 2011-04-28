@@ -41,9 +41,8 @@ module Fog
       request :create_key
       request :get_key
       request :list_keys
-      #name
-      #name & publicKey
-      #update key
+      request :upload_key
+      #request :update_key
       #request :delete_key
       request :get_location
       request :list_locations #Doesn't support JSON
