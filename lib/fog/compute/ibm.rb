@@ -17,7 +17,8 @@ module Fog
       request :get_instance
       request :list_instances
       #request :get_request
-      #request :create_image
+      #request :clone_image
+      request :create_image
       #request :delete_image
       #request :get_image
       request :list_images
@@ -28,10 +29,10 @@ module Fog
       request :list_storage_offerings
       request :get_location
       #request :list_locations
-      #request :create_address
+      request :create_address
       #request :delete_address
       #request :get_address
-      #request :list_addresses
+      request :list_addresses
       #request :get_vlans
       #request :create_key - does want?
       #request :list_keys
