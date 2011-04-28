@@ -30,7 +30,7 @@ module Fog
       request :get_location
       #request :list_locations
       request :create_address #TODO
-      #request :delete_address
+      request :delete_address
       request :list_addresses
       request :list_vlans
       #request :create_key - does want?
